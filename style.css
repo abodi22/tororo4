@@ -1,0 +1,240 @@
+/* -----------------------------------------
+   BASIC PAGE STYLES
+----------------------------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #111; 
+  overflow: hidden; /* So the page won't scroll if large */
+  font-family: sans-serif;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+#testCanvas {
+  display: block; /* Removes extra space below canvas in some browsers */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* -----------------------------------------
+   MOON + HEARTS STYLES
+----------------------------------------- */
+.moon {
+  animation: float 5s ease-in-out infinite alternate;
+  background-color: #cccccc;
+  border-radius: 50%;
+  height: 20em;
+  width: 20em;
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  margin: 0;
+  box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.7);
+  z-index: 10;
+}
+
+.moon__container {
+  animation: lookaround 15s infinite alternate;
+  height: 100%;
+  position: relative;
+}
+
+.moon__crater {
+  animation: lookaround 15s infinite alternate-reverse;
+  background-color: #c2c2c2;
+  border-radius: 50%;
+  box-shadow: inset -0.3em 0.2em 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+}
+
+.moon__crater--small {
+  height: 1.2em;
+  width: 1.2em;
+}
+
+.moon__crater--medium {
+  height: 2.2em;
+  width: 2.2em;
+}
+
+.moon__crater--big {
+  height: 3.15em;
+  width: 3.15em;
+}
+
+.moon__face {
+  position: absolute;
+  height: 15%;
+  left: 65%;
+  top: 54%;
+  width: 25%;
+}
+
+.moon__eye {
+  animation: blink 2s infinite alternate;
+  background-color: #000000;
+  border-radius: 50%;
+  height: 0.75em;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 0.75em;
+}
+
+.moon__eye::before,
+.moon__eye::after {
+  animation: shine 1s infinite alternate;
+  background-color: #fafafa;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 40%;
+  opacity: 0.95;
+  position: absolute;
+  width: 40%;
+}
+
+.moon__eye::after {
+  bottom: 0;
+  height: 60%;
+  right: 0;
+  width: 60%;
+}
+
+.moon__eye--left {
+  left: 0;
+}
+
+.moon__eye--right {
+  right: 0;
+}
+
+.moon__cheek {
+  background: #ef9a9a;
+  border-radius: 40%;
+  height: 0.75em;
+  position: absolute;
+  top: 38%;
+  width: 1.5em;
+}
+
+.moon__cheek--left {
+  left: -1em;
+}
+
+.moon__cheek--right {
+  right: -1em;
+}
+
+.moon__smile {
+  border: 0.25em solid transparent;
+  border-left-color: #000000;
+  border-bottom-color: #000000;
+  border-radius: 50%;
+  height: 1em;
+  left: 41%;
+  position: absolute;
+  transform: rotate(-45deg);
+  transition: transform 0.2s;
+  width: 1em;
+}
+
+.love {
+  position: absolute;
+  right: 1em;
+  top: 3em;
+}
+
+.love__heart {
+  animation: heartbeat 4s infinite normal backwards;
+  height: 1em;
+  position: absolute;
+  width: 1em;
+}
+
+.love__heart--1 {
+  animation-delay: 0.5s;
+  left: 1.5em;
+}
+
+.love__heart--2 {
+  animation-delay: 1s;
+  left: 3em;
+}
+
+.love__heart--3 {
+  animation-delay: 1.5s;
+  left: 0em;
+}
+
+.love__heart::before,
+.love__heart::after {
+  background: #ef9a9a;
+  border-radius: 50% 50% 0 0;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 65%;
+}
+
+.love__heart::before {
+  transform: rotate(-35deg) translateX(-40%);
+}
+
+.love__heart::after {
+  transform: rotate(55deg) translateX(40%);
+}
+
+/* -----------------------------------------
+   KEYFRAME ANIMATIONS
+----------------------------------------- */
+@keyframes float {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(20px); }
+}
+
+@keyframes lookaround {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(10deg); }
+}
+
+@keyframes blink {
+  0%   { height: 0.75em; }
+  100% { height: 0.1em; }
+}
+
+@keyframes shine {
+  0%   { opacity: 0.95; }
+  100% { opacity: 0.5; }
+}
+
+@keyframes heartbeat {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.2); }
+  40%  { transform: scale(1); }
+  60%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* -----------------------------------------
+   BUTTON FOR AUDIO
+----------------------------------------- */
+#playButton {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1em 2em;
+  font-size: 1em;
+  cursor: pointer;
+  background: #D4AF37;
+  border: none;
+  border-radius: 5px;
+  color: #111;
+  font-weight: bold;
+}

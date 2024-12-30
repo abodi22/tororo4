@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Infinite Hearts + Audio</title>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- EaselJS (for the hearts animation) -->
+  <script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+</head>
+<body>
+  <!-- Canvas for the hearts animation -->
+  <canvas id="testCanvas" width="550" height="500"></canvas>
+
+  <!-- Moon / hearts elements -->
+  <div class="moon">
+    <div class="love">
+      <div class="love__heart love__heart--1"></div>
+      <div class="love__heart love__heart--2"></div>
+      <div class="love__heart love__heart--3"></div>
+    </div>
+    <div class="moon__container">
+      <div class="moon__crater moon__crater--1 moon__crater--small" style="top: 3em; left: 4em;"></div>
+      <div class="moon__crater moon__crater--2 moon__crater--small" style="top: 10em; left: 6em;"></div>
+      <div class="moon__crater moon__crater--3 moon__crater--small" style="top: 12em; left: 2em;"></div>
+      <div class="moon__crater moon__crater--4 moon__crater--medium" style="top: 5em; left: 10em;"></div>
+      <div class="moon__crater moon__crater--5 moon__crater--medium" style="top: 14em; left: 7em;"></div>
+      <div class="moon__crater moon__crater--6 moon__crater--big" style="top: 8em; left: 3em;"></div>
+
+      <div class="moon__face">
+        <div class="moon__eye moon__eye--left"></div>
+        <div class="moon__eye moon__eye--right"></div>
+        <div class="moon__cheek moon__cheek--left"></div>
+        <div class="moon__cheek moon__cheek--right"></div>
+        <div class="moon__smile"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Element -->
+  <audio id="bgAudio" src="Newy.mp3"></audio>
+
+  <!-- Button to start audio on iOS -->
+  <button id="playButton">Play Music</button>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
